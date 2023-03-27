@@ -8,8 +8,9 @@ const connectDB = require('./server/database/connection');
 
 const app = express();
 
+
 dotenv.config( { path : 'config.env'} )
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 3000
 
 // log requests
 app.use(morgan('tiny'));
@@ -22,7 +23,7 @@ app.use(bodyparser.urlencoded({ extended : true}))
 
 // set view engine
 app.set("view engine", "ejs")
-//app.set("views", path.resolve(__dirname, "views/ejs"))
+
 
 // load assets
 app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
